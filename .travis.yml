@@ -14,7 +14,7 @@ before_script:
 
 script:
     - docker --version
-    - docker build -t simple-node .
+    - docker build -t simple-node --build-arg FAVORITE_FOOD=${FAVORITE_FOOD} .
     - docker tag simple-node garcialuiz/simple-node
 
     
