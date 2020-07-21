@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ud-simple-node
+  labels:
+    app: ud-simple-node
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ud-simple-node
+  template:
+    metadata:
+      labels:
+        app: ud-simple-node
+    spec:
+      containers:
+      - name: ud-simple-node
+        image: garcialuiz/simple-node
+        ports:
+        - containerPort: 80
